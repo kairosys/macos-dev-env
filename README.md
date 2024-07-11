@@ -3,14 +3,14 @@
 ## 1. macOS Configuration
 * [Download iTerm2](https://iterm2.com/downloads.html)
 * [Install Homebrew](https://brew.sh)
-  ```bash
+  ```sh
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/kevin/.zprofile
   eval "$(/opt/homebrew/bin/brew shellenv)"
   ```
 * [Download Zettlr](https://www.zettlr.com/download)
-  ```bash
-  $ brew install --cask Zettlr
+  ```sh
+  brew install --cask Zettlr
   ```
 
 ## 2. Visual Studio Code
@@ -25,7 +25,7 @@
 
 ## 3. Podman Desktop
 * [Podman Desktop for macOS](https://podman-desktop.io/downloads/macos)
-  ```bash
+  ```sh
   brew install podman-desktop
   ```
   Brew will also install the Podman Engine along with the Podman Desktop application, in case you don't have it installed yet.
@@ -34,44 +34,44 @@
   - kubectl CLI
   - Podman
 * Run a very basic httpd server (named basic_httpd) that serves only its index page.
-  ```bash
+  ```sh
   podman run --name basic_httpd -dt -p 8080:80/tcp docker.io/nginx
   ```
 * Open in browser: http://localhost:8080
 * Stop and remove the httpd container:
-  ```bash
+  ```sh
   podman stop basic_httpd
   podman rm basic_httpd
   ```
 
 ## 4. Git
 * [Download for macOS](https://git-scm.com/download/mac)
-   ```bash
+   ```sh
    brew install git
    ```
 * Check the current version of Git:
-  ```bash
+  ```sh
   git -v
   ```
 * [Getting Started - First-Time Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
   - View all Git settings:
-    ```bash
+    ```sh
     git config --list --show-origin
     ```
   - Setup Identity:
-    ```bash
+    ```sh
     git config --global user.name "Your Name"
     git config --global user.email username@mail.com
     ```
 * [Generating a new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key)
   - Generating a new SSH key:
-    ```bash
+    ```sh
     ssh-keygen -t ed25519 -C "username@mail.com"
     ```
   - When you're prompted to "Enter a file in which to save the key", you can press `Enter` to accept the default file location.
   - At the prompt, type a secure `passphrase`.
   - Start the ssh-agent and add SSH private key to the agent:
-    ```bash
+    ```sh
     eval "$(ssh-agent -s)"
     ssh-add ~/.ssh/id_ed25519
     ```
@@ -82,7 +82,7 @@
     The file /Users/kevin/.ssh/config does not exist.
     ```
   - If the file doesn't exist, create the file.
-    ```bash
+    ```sh
     vi ~/.ssh/config
     ```
   - Modify the file to contain the following lines.
@@ -93,12 +93,12 @@
       IdentityFile ~/.ssh/id_ed25519
     ```
   - Add your SSH private key to the ssh-agent and store your passphrase in the keychain.
-    ```bash
+    ```sh
     ssh-add --apple-use-keychain ~/.ssh/id_ed25519
     ```
 * [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
   - Copy the SSH public key to the clipboard:
-    ```bash
+    ```sh
     pbcopy < ~/.ssh/id_ed25519.pub
     ```
   - [GitHub > Settings > SSH and GPG keys](https://github.com/settings/keys), click `New SSH key` or `Add SSH key`.
@@ -106,6 +106,6 @@
     - Key type: `Authentication Key`
     - Key: `[paste your public key]`
   - Test the SSH key:
-    ```bash
+    ```sh
     ssh -T git@github.com
     ```
