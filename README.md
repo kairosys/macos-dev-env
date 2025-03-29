@@ -44,7 +44,8 @@
   - [Rainbow CSV](vscode:extension/mechatroner.rainbow-csv)
   - [GitLens — Git supercharged](vscode:extension/eamodio.gitlens)
   - [Markdown All in One](vscode:extension/yzhang.markdown-all-in-one)
-  - [Polacode](vscode:extension/pnp.polacode)
+  - [Markdown Preview Mermaid Support](vscode:extension/bierner.markdown-mermaid)
+  - [CodeSnap](vscode:extension/adpyke.codesnap)
 
 ## 3. Podman Desktop
 * [Podman Desktop for macOS](https://podman-desktop.io/downloads/macos)
